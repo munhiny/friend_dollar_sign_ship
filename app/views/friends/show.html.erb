@@ -2,16 +2,16 @@
   <div class="friend-info">
     <img src="https://source.unsplash.com/DQPP9rVLYGQ" alt="avatar" class="image-avatar">
     <div class="avatar-info">
-      <h2>John Doe</h2>
-      <p><strong>1 day:</strong> $115.95</p>
-      <p>Junior Software Developer</p>
-      <p class="location">Lives in Fitzroy, Melbourne</p>
+      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+      <p><strong>1 day:</strong> $<%= @friend.price %></p>
+      <p class="location">Lives in <%= @friend.location %></p>
     </div>
     <a href="#"><button class="book-button">Book Now</button></a>
+    <%= link_to "Back", friends_path %>
   </div>
   <div class="interests-info">
     <div class="interests-list card">
-      <p><strong>John spends most of his time on:</strong></p>
+      <p><strong><%= @user.first_name %> spends most of his time on:</strong></p>
       <div class="specific-interest">
         <p><i class="fas fa-camera"></i> Photography</p>
         <p><i class="fas fa-desktop"></i> Programming</p>
@@ -21,7 +21,8 @@
     </div>
     <div class="description card">
     <strong><p>A bit about me...</p></strong>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+    <p><%= @friend.description %></p>
     </div>
   </div>
 </div>
+
