@@ -1,6 +1,7 @@
 <h1>What a booking!</h1>
 <p>Hey <%= @user.first_name %>, <%= @user.last_name %> you have a booking with
 <%= @friend.user.first_name %> <%= @friend.user.last_name %> on <%= @booking.date %>
+<%= @friend.user.first_name %> <%= @friend.user.last_name %> on
 <%= @booking.start_time %> until the <%= @booking.end_time %> </p>
 
 <%= link_to "Back", friends_path %>
