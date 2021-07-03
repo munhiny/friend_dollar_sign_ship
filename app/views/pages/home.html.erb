@@ -36,7 +36,8 @@
 <div class="hero-image">
   <div class="hero-text">
     <h1>Say hello to your new friends</h1>
-    <div class="btn btn-primary mt-2">Sign up</div>
+    <div class="btn btn-primary mt-2"><%= link_to "Meet up", friends_path(@friends) %></div>
+    <div class="btn btn-primary mt-2"><%= link_to "Share the Love... Become a Friend", new_friend_path(@friends) %></div>
   </div>
 </div>
 <div class="container">
