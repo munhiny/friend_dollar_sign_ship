@@ -1,19 +1,15 @@
 <h2>Meet our friends</h2>
-<ul>
-<%# TODO:FIX %>
+<ul class= "list-unstyled pl-3">
   <% @friends.each do |friend| %>
-    <% @users.each do |user| %>
-      <li>
+    <li>
       <p>
-        <span>
-          <%= link_to user.first_name,  friend_path(friend)%></li>
-          <%= user.last_name %></li>
-        </span>
+        <h3>
+          <%= link_to friend.user.full_name,  friend_path(friend)%></li>
+        </h3>
         <%= friend.description %></li>
         <%= friend.location %></li>
         <%= friend.price %></li>
       </p>
-    <% end %>
+    </li>
   <% end %>
-  <li>
 </ul>
