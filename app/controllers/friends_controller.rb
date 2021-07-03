@@ -19,7 +19,7 @@ class FriendsController < ApplicationController
   end
 
   def show
-    #@friend = Friend.find(params[:id])
+    @friend = Friend.find(params[:id])
   end
 
   private
