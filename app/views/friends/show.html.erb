@@ -6,7 +6,7 @@
       <p><strong>1 day:</strong> $<%= @friend.price %></p>
       <p class="location">Lives in <%= @friend.location %></p>
     </div>
-    <a href="#"><button class="book-button">Book Now</button></a>
+    <%= link_to "Book Now", new_friend_booking_path(@friend), class:"book-button"%>
     <%= link_to "Back", friends_path %>
   </div>
   <div class="interests-info">

@@ -1,5 +1,4 @@
 class FriendsController < ApplicationController
-
   def new
     @friend = Friend.new
   end
@@ -13,7 +12,7 @@ class FriendsController < ApplicationController
       render :new
     end
   end
-  
+
   def index
     @friends = Friend.all
     @users = User.all
@@ -21,7 +20,6 @@ class FriendsController < ApplicationController
 
   def show
     @friend = Friend.find(params[:id])
-    @user = User.find(params[:id])
   end
 
   private
