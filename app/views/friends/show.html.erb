@@ -2,7 +2,7 @@
   <div class="friend-info">
     <img src="https://source.unsplash.com/DQPP9rVLYGQ" alt="avatar" class="image-avatar">
     <div class="avatar-info">
-      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+      <h2><%= @friend.user.full_name %></h2>
       <p><strong>1 day:</strong> $<%= @friend.price %></p>
       <p class="location">Lives in <%= @friend.location %></p>
     </div>

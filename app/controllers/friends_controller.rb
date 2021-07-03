@@ -20,6 +20,7 @@ class FriendsController < ApplicationController
 
   def show
     @friend = Friend.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   private
