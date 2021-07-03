@@ -1,6 +1,8 @@
 class FriendsController < ApplicationController
     def index
         @friends = Friend.all
+        @users = User.all
+
     end
 
 
