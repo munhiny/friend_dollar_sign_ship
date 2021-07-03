@@ -1,1 +1,8 @@
 <h1>Wow you want to be a friend!</h1>
+<p> Hello <%= current_user.first_name %>, you can now create your friend page </p>
+<%= simple_form_for(@friend) do |f| %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.submit %>
+<% end %>
