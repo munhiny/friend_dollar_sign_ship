@@ -13,21 +13,16 @@ class FriendsController < ApplicationController
       render :new
     end
   end
-
-
   
   def index
     @friends = Friend.all
     @users = User.all
   end
 
-
   def show
-    #@friend = Friend.find(params[:id])
+    @friend = Friend.find(params[:id])
+    @user = User.find(params[:id])
   end
-
-
-
 
   private
 
