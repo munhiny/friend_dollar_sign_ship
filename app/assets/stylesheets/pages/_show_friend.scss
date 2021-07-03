@@ -1,0 +1,69 @@
+
+
+
+
+
+
+
+.image-avatar {
+    width: 100px;
+    height: 100px;
+    position: center;
+    display: inline;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.container {
+    width: 800px;
+    height: 600px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px;
+    justify-content: space-between;
+}
+body {
+    background-color: rgb(235, 235, 235);
+}
+​.avatar-info {
+    margin-top: 30px;
+    margin-left: 10px;
+    h2 {
+        margin: 0;
+    }
+    p {
+        margin: 0;
+    }
+    .location {
+        opacity: 0.5;
+    }
+}
+​.card {
+    width: 450px;
+    height: auto;
+    // border: 1px solid rgb(194, 194, 194);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    padding: 15px;
+  }
+.book-button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgb(55, 186, 230);
+    color: white;
+    text-decoration: none;
+    border: none;
+    margin-top: 10px;
+    transition: 0.2s;
+    &:hover {
+        background-color: rgb(6, 87, 114);
+    }
+}
+​.description {
+    margin-top: 20px;
+}
+
+

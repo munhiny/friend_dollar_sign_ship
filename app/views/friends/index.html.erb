@@ -1,6 +1,19 @@
 <h2>Meet our friends</h2>
-<ol>
-  <% @friends.each do |freind| %>
-    <li><%= friend %></li>
+<ul>
+<%# TODO:FIX %>
+  <% @friends.each do |friend| %>
+    <% @users.each do |user| %>
+      <li>
+      <p>
+        <span>
+          <%= link_to user.first_name,  friend_path(friend)%></li>
+          <%= user.last_name %></li>
+        </span>
+        <%= friend.description %></li>
+        <%= friend.location %></li>
+        <%= friend.price %></li>
+      </p>
+    <% end %>
   <% end %>
-</ol>
+  <li>
+</ul>
