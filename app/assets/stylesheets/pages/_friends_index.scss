@@ -1,0 +1,61 @@
+.grid-container {
+    padding: 20px;
+    margin: 0px 20px;
+    width: 60%;
+}
+
+.friend-card {
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border-bottom: 1px solid rgb(207, 205, 205);
+}
+
+.friend-card:first-child {
+    border-top: 1px solid rgb(207, 205, 205);
+}
+
+.profile-avatar {
+    height: 150px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px;
+    flex-grow: 1;
+}
+
+.full-name {
+    font-size: 20px;
+}
+
+.location {
+    font-size: 15px;
+    opacity: 50%;
+}
+
+.content {
+    flex-direction: column;
+    width: 500px;
+    .price {
+        margin-top: auto;
+    }
+}
+
+.friend-link {
+    color: black;
+    &:hover {
+        color: black;
+    }
+}
+
+a.friend-link {
+    text-decoration: none;
+}
+
+.friend-description {
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
