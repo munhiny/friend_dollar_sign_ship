@@ -1,6 +1,7 @@
 <h1>Wow you want to make a booking!</h1>
 <p> Hello <%= current_user.first_name %>, you can now make a booking with <%= @friend_user.first_name %></p>
 <%= simple_form_for [@friend, @booking] do |f| %>
+  <%= f.input :date %>
   <%= f.input :start_time %>
   <%= f.input :end_time %>
   <%= f.submit %>
