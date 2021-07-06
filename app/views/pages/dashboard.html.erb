@@ -1,0 +1,10 @@
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.friend.user.full_name %></li>
+    <li><%= booking.date %></li>
+    <li><%= booking.start_time.strftime("%R") %></li>
+    <li><%= booking.end_time.strftime("%R") %></li>
+  <% end %>
+</ul>
+
