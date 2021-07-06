@@ -1,15 +1,18 @@
-<h2>Meet our friends</h2>
-<ul class= "list-unstyled pl-3">
+<h2 class="ml-4 mt-3">Meet our friends</h2>
+<div class="grid-container">
   <% @friends.each do |friend| %>
-    <li>
-      <p>
-        <h3>
-          <%= link_to friend.user.full_name,  friend_path(friend)%></li>
-        </h3>
-        <%= friend.description %></li>
-        <%= friend.location %></li>
-        <%= friend.price %></li>
-      </p>
-    </li>
+    <div class="row friend-card">
+      <%= link_to friend_path(friend), target: :_blank, :class => "friend-link" do %>
+        <div class="info d-flex">
+          <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="profile-avatar">
+          <div class="content d-flex">
+            <div class="location"><%= friend.location %></div>
+            <div class="full-name"><%= friend.user.full_name %></div>
+            <div class="friend-description"><%= friend.description %></div>
+            <div class="price"><strong>$<%= friend.price %></strong>/day</div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-</ul>
+</div>
