@@ -1,6 +1,6 @@
 <div class="container d-flex">
   <div class="friend-info">
-    <img src="https://source.unsplash.com/DQPP9rVLYGQ" alt="avatar" class="image-avatar">
+    <%= cl_image_tag @friend.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="avatar-info">
       <h2><%= @friend.user.full_name %></h2>
       <p><strong>1 day:</strong> $<%= @friend.price %></p>
