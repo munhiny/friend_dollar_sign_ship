@@ -16,12 +16,21 @@ class FriendsController < ApplicationController
   def index
     @friends = Friend.all
     @users = User.all
+
+    @markers = @friends.geocoded.map do |friend|
+      {
+        lat: friend.latitude,
+        lng: friend.longitude
+      }
+    end
   end
 
   def show
     @friend = Friend.find(params[:id])
     @user = User.find(params[:id])
   end
+
+
 
   private
 
