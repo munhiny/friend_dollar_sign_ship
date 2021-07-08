@@ -1,10 +1,17 @@
-
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= booking.friend.user.full_name %></li>
-    <li><%= booking.date %></li>
-    <li><%= booking.start_time.strftime("%R") %></li>
-    <li><%= booking.end_time.strftime("%R") %></li>
-  <% end %>
-</ul>
+<div class="booking-container">
+  <h3 class="mb-3">Your Dashboard</h3>
+  <div class="grid-container">
+    <% @bookings.each do |booking| %>
+      <div class="booking-card">
+        <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="booking-avatar">
+        <div class="booking-details">
+          <p>Booking details:</p>
+          <i class="fas fa-user-alt"></i>  <%= link_to booking.friend.user.full_name, target: :_blank %><br>
+          <i class="fas fa-calendar-alt"></i>  <%= booking.date %><br>
+          <i class="fas fa-clock"></i>  <%= booking.start_time.strftime("%R") %> to <%= booking.end_time.strftime("%R") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
