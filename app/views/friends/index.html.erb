@@ -4,7 +4,13 @@
     <div class="row friend-card">
       <%= link_to friend_path(friend), target: :_blank, :class => "friend-link" do %>
         <div class="info d-flex">
-          <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="profile-avatar">
+         <% if friend.photo.attached? %>
+              <div class ="profile-avatar">
+               <%= cl_image_tag friend.photo.key, height: 150, width: 250, crop: :fill %>
+              </div>
+            <% else %>
+              <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="profile-avatar">
+            <% end %>
           <div class="content d-flex">
             <div class="location"><%= friend.location %></div>
             <div class="full-name"><%= friend.user.full_name %></div>
