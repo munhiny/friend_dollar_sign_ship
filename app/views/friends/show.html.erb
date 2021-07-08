@@ -1,14 +1,19 @@
 <div class="container d-flex">
   <div class="friend-info">
-    <%= cl_image_tag @friend.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if @friend.photo.attached? %>
+      <%= cl_image_tag @friend.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="profile-avatar">
+    <% end %>
     <div class="avatar-info">
       <h2><%= @friend.user.full_name %></h2>
       <p><strong>1 day:</strong> $<%= @friend.price %></p>
       <p class="location">Lives in <%= @friend.location %></p>
-    </div>
-    <%= link_to "Book Now", new_friend_booking_path(@friend), class:"book-button"%>
-    <%= link_to "Back", friends_path %>
+     </div>
+      <%= link_to "Book Now", new_friend_booking_path(@friend), class:"book-button"%>
+      <%= link_to "Back", friends_path %>
   </div>
+
   <div class="interests-info">
     <div class="interests-list card">
       <p><strong><%= @user.first_name %> spends most of his time on:</strong></p>
@@ -19,10 +24,12 @@
         <p><i class="fas fa-plane-departure"></i> Travelling</p>
       </div>
     </div>
+
     <div class="description card">
-    <strong><p>A bit about me...</p></strong>
-    <p><%= @friend.description %></p>
+      <strong><p>A bit about me...</p></strong>
+      <p><%= @friend.description %></p>
     </div>
+
   </div>
 </div>
 
