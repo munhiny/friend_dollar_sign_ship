@@ -12,7 +12,6 @@ const initMapbox = () => {
 
   if (mapElement) {
     // only build a map if there's a div#map to inject into
-
     console.log("does this work");
     mapboxgl.accessToken =
       "pk.eyJ1IjoiYXdlc29tZTUiLCJhIjoiY2txcnZrdzlvMGJzbDJvbXRneGR3Yng4biJ9.NrKRnd6T6PDSgAoIt6VZeA";
@@ -22,7 +21,8 @@ const initMapbox = () => {
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(map);
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+      new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).setPopup(popup).addTo(map);
     });
     fitMapToMarkers(map, markers);
   }

@@ -22,7 +22,8 @@ class FriendsController < ApplicationController
     @markers = @friends.geocoded.map do |friend|
       {
         lat: friend.latitude,
-        lng: friend.longitude
+        lng: friend.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { friend: friend })
       }
     end
   end
@@ -31,8 +32,6 @@ class FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
     @user = User.find(params[:id])
   end
-
-
 
   private
 
