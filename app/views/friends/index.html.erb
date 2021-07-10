@@ -1,33 +1,31 @@
-<h2 class="ml-4 mt-3">Meet our friends</h2>
-<div class="grid-container-friend">
-  <% @friends.each do |friend| %>
-    <div class="row friend-card">
-      <%= link_to friend_path(friend), target: :_blank, :class => "friend-link" do %>
-        <div class="info d-flex">
-         <% if friend.photo.attached? %>
-              <div class ="profile-avatar">
-               <%= cl_image_tag friend.photo.key, height: 150, width: 250, crop: :fill %>
+<h2 class="ml-4 mt-3">Meet friends!</h2>
+  <div class="big-container d-flex">
+    <div class="grid-container-friend">
+      <% @friends.each do |friend| %>
+        <div class="row friend-card">
+          <%= link_to friend_path(friend), target: :_blank, :class => "friend-link" do %>
+            <div class="info d-flex">
+            <% if friend.photo.attached? %>
+                  <div class ="profile-avatar">
+                  <%= cl_image_tag friend.photo.key, height: 150, width: 250, crop: :fill %>
+                  </div>
+                <% else %>
+                  <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="profile-avatar">
+                <% end %>
+              <div class="content d-flex">
+                <div class="location"><%= friend.location %></div>
+                <div class="full-name"><%= friend.user.full_name %></div>
+                <div class="friend-description"><%= friend.description %></div>
+                <div class="price"><strong>$<%= friend.price %></strong>/day</div>
               </div>
-            <% else %>
-              <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="profile-avatar">
-            <% end %>
-          <div class="content d-flex">
-            <div class="location"><%= friend.location %></div>
-            <div class="full-name"><%= friend.user.full_name %></div>
-            <div class="friend-description"><%= friend.description %></div>
-            <div class="price"><strong>$<%= friend.price %></strong>/day</div>
-          </div>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-  <% end %>
-
-  <div id="map"
-
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-  
-     
-
-  ></div>
+    <div id="map"
+      style="width: 100%; height: 900px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['pk.eyJ1IjoiYXdlc29tZTUiLCJhIjoiY2txcnZrdzlvMGJzbDJvbXRneGR3Yng4biJ9.NrKRnd6T6PDSgAoIt6VZeA'] %>"
+    ></div>
 </div>
