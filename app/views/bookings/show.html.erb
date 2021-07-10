@@ -3,4 +3,5 @@
 <%= @friend.user.first_name %> <%= @friend.user.last_name %> on <%= @booking.date %> at
 <%= @booking.start_time.strftime("%R") %> until the <%= @booking.end_time.strftime("%R") %> </p>
 
-<%= link_to "Back", friends_path %>
+<%= link_to "Back", friends_path %> | 
+<%= link_to "Dashboard", dashboard_path %>
