@@ -1,24 +1,26 @@
-<div class="container d-flex">
-  <div class="friend-info">
-    <% if @friend.photo.attached? %>
-      <%= cl_image_tag @friend.photo.key, height: 300, width: 400, crop: :fill %>
-    <% else %>
-      <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="profile-avatar">
-    <% end %>
-    <div class="avatar-info">
-      <h2><%= @friend.user.full_name %></h2>
-      <p class="friend-price"><strong>1 day:</strong> $<%= @friend.price %></p>
-      <p class="friend-location">Lives in <%= @friend.location %></p>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="info-container d-flex">
+    <div class="friend-info">
+      <% if @friend.photo.attached? %>
+        <%= cl_image_tag @friend.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="profile-avatar">
+      <% end %>
+      <div class="avatar-info">
+        <h2><%= @friend.user.full_name %></h2>
+        <p class="friend-price"><strong>1 day:</strong> $<%= @friend.price %></p>
+        <p class="friend-location">Lives in <%= @friend.location %></p>
+      </div>
+      <div class="action-buttons d-flex">
+        <%= link_to "Back", friends_path, class: "btn btn-danger", id: "back-link" %>
+        <%= link_to "Book Now", new_friend_booking_path(@friend), class:"btn btn-primary" %>
+      </div>
     </div>
-    <div class="action-buttons d-flex">
-      <%= link_to "Back", friends_path, class: "btn btn-danger", id: "back-link" %>
-      <%= link_to "Book Now", new_friend_booking_path(@friend), class:"btn btn-primary" %>
-    </div>
-  </div>
-  <div class="interests-info">
-    <div class="description-card">
-      <strong><p>A bit about me...</p></strong>
-      <p><%= @friend.description %></p>
+    <div class="interests-info">
+      <div class="description-card">
+        <strong><p>A bit about me...</p></strong>
+        <p><%= @friend.description %></p>
+      </div>
     </div>
   </div>
 </div>
