@@ -1,0 +1,8 @@
+<h1>Edit your booking with <%= @friend.user.first_name %></h1>
+<%= simple_form_for [@friend, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :start_time %>
+  <%= f.input :end_time %>
+  <%= f.submit %>
+<% end %>
+<%= link_to "Back", dashboard_path %>

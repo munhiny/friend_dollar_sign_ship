@@ -4,11 +4,11 @@
 
 .booking-card {
     border: 1px solid rgb(221, 217, 217);
-    height: 300px;
+    height: 330px;
     border-radius: 10px;
 }
 
-.grid-container{
+.grid-container-dashboard {
     display: grid;
     grid-template-columns: 260px 260px 260px;
     grid-gap: 18px;
@@ -24,6 +24,10 @@
 
 .booking-details {
     padding: 20px;
+}
+
+.cancel {
+    font-size: 13px;
 }
 
   
