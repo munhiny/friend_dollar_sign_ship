@@ -14,8 +14,18 @@ class FriendsController < ApplicationController
   end
 
   def index
-    @friends = Friend.all
-    @users = User.all
+    if params[:query].present?
+      @friends = Friend.joins(:user).where("first_name ilike ? OR last_name ilike ?", "%#{params[:query]}%","%#{params[:query]}%")
+    else
+      @friends = Friend.all
+    end
+    @markers = @friends.geocoded.map do |friend|
+      {
+        lat: friend.latitude,
+        lng: friend.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { friend: friend })
+      }
+    end
   end
 
   def show
@@ -26,6 +36,6 @@ class FriendsController < ApplicationController
   private
 
   def friend_params
-    params.require(:friend).permit(:price, :description, :location)
+    params.require(:friend).permit(:price, :description, :location, :photo)
   end
 end

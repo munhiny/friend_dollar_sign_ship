@@ -1,4 +1,4 @@
-.grid-container {
+.grid-container-friend {
     padding: 20px;
     margin: 0px 20px;
     width: 60%;
@@ -58,4 +58,12 @@ a.friend-link {
     display: -webkit-box;
     -webkit-line-clamp: 3; /* number of lines to show */
     -webkit-box-orient: vertical;
+}
+
+#map {
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    height: 100%;
 }
