@@ -6,12 +6,18 @@
         <img src="https://source.unsplash.com/_M6gy9oHgII" alt="profile-avatar" class="booking-avatar">
         <div class="booking-details">
           <p>Booking details:</p>
-          <i class="fas fa-user-alt"></i>  <%= link_to booking.friend.user.full_name, target: :_blank %><br>
+          <i class="fas fa-user-alt"></i>  <%= link_to booking.friend.user.full_name, friend_path(booking.friend), target: :_blank %><br>
           <i class="fas fa-calendar-alt"></i>  <%= booking.date %><br>
-          <i class="fas fa-clock"></i>  <%= booking.start_time.strftime("%R") %> to <%= booking.end_time.strftime("%R") %>
+          <i class="fas fa-clock"></i>  <%= booking.start_time.strftime("%R") %> to <%= booking.end_time.strftime("%R") %><br>
+          <div class="cancel">
+            <%= link_to "Update booking", edit_friend_booking_path(booking.friend, booking) %><br>
+            <%= link_to "Cancel booking",
+              booking_path(booking),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-

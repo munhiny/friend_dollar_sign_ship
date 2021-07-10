@@ -23,6 +23,25 @@ class BookingsController < ApplicationController
     @user = current_user
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    @friend = Friend.find(params[:friend_id])
+    @friend_user = User.find(@friend.user_id)
+    @user = current_user
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to dashboard_path
+  end
+
   private
 
   def booking_params
