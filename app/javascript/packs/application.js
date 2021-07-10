@@ -23,10 +23,6 @@ require("channels");
 // External imports
 import { initMapbox } from "../plugins/init_mapbox";
 import "bootstrap";
-<<<<<<< HEAD
-=======
-//  i;
->>>>>>> 8562708feacf5f41548bdeeeedd254feac756298
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
