@@ -9,54 +9,80 @@
 }
 
 .container {
+    margin-top: 20px;
     width: 800px;
-    height: 600px;
+    // height: auto;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: white;
     border-radius: 5px;
     padding: 30px;
     justify-content: space-between;
 }
+
 body {
     background-color: rgb(235, 235, 235);
 }
+
 ​.avatar-info {
     margin-top: 30px;
     margin-left: 10px;
-    h2 {
-        margin: 0;
-    }
-    p {
-        margin: 0;
-    }
-    .location {
-        opacity: 0.5;
-    }
 }
+.friend-location {
+    margin: 0;
+    opacity: 50%;
+    margin-bottom: 10px;
+}
+
+
 ​.card {
     width: 450px;
     height: auto;
-    // border: 1px solid rgb(194, 194, 194);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
     padding: 15px;
-  }
+}
+
 .book-button {
-    width: 100%;
+    width: 100px;
+    padding: 5px;
     height: 50px;
     border-radius: 5px;
     background-color: rgb(55, 186, 230);
     color: white;
-    text-decoration: none;
     border: none;
     margin-top: 10px;
     transition: 0.2s;
+    margin-bottom: 20px;
     &:hover {
         background-color: rgb(6, 87, 114);
+        color: white;
+        text-decoration: none;
     }
 }
+
+// a.book-button {
+//     text-decoration: none;
+// }
+
 ​.description {
     margin-top: 20px;
 }
 
+.description-card {
+    padding: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+}
 
+.friend-price {
+    margin: 0;
+}
+
+#back-link {
+    margin-right: 10px;
+}
+
+a.back-link {
+    text-decoration: none;
+    margin-top: 10px;
+}
